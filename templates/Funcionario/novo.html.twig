@@ -1,19 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>TikTok</title>
-    </head>
-    <body>
-        Novo funcionário
-        <form action="/funcionario/novo" method="POST">
-            <span>
-                Nome: <input name="nome" required type="text">
-            </span>
-            <span>
-                Data de nascimento: <input name="dataDeNascimento" required type="date">
-            </span>
-            <button type="submit">Criar</button>
-        </form>
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <style>
+        h1 {
+            font-size: 50px !important;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Funcionário</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Novo
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" action="/funcionario/novo" method="POST">
+                                <div class="form-group">
+                                    <label>Nome</label>
+                                    <input class="form-control" name="nome" type="text"
+                                           placeholder="Digite o nome do funcionario" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Data de Nascimento</label>
+                                    <input class="form-control" name="dataDeNascimento" required type="date">
+                                </div>
+                                <button type="submit" class="btn btn-default">Cirar</button>
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+{% endblock %}

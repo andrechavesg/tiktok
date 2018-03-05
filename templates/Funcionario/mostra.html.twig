@@ -1,30 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>TikTok</title>
-    </head>
-    <body>
-        Dados do funcionário:
-        <table>
-            <tr>
-                <th>Nome</th>
-                <td>{{ funcionario.nome }}</td>
-            </tr>
-            <tr>
-                <th>Data de Nascimento</th>
-                <td>{{ funcionario.dataDeNascimento|date("d-m-Y") }}</td>
-            </tr>
-            <tr>
-                <th>Data de entrada</th>
-                <td>{{ funcionario.dataDeEntrada|date("d-m-Y") }}</td>
-            </tr>
-            <tr>
-                <th>Tempo na empresa</th>
-                <td>{{ funcionario.tempoNaEmpresa|date("%Y anos, %m meses, %d dias") }}</td>
-            </tr>
-        </table>
-    </body>
-</html>
-
-
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Hover Rows
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{ funcionario.nome }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data de Nascimento</th>
+                        <td>{{ funcionario.dataDeNascimento|date("d-m-Y") }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data de entrada</th>
+                        <td>{{ funcionario.dataDeEntrada|date("d-m-Y") }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tempo na empresa</th>
+                        <td>{{ funcionario.tempoNaEmpresa|date("%Y anos, %m meses, %d dias") }}</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+{% endblock %}

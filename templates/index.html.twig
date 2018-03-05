@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>TikTok</title>
-    </head>
-    <body>
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>
         Bem vindo!
         {{ 'now'|date('Y/m/d h:i') }}
-    </body>
-</html>
-
-
+    </h1>
+{% endblock %}
