@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Projeto
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Horas Lancadas</th>
+                        <th>Funcionarios</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for projeto in projetos %}
+                        <tr>
+                            <td><a href="/projeto/edita/{{ projeto.id }}">{{ projeto.nome }}</a></td>
+                            <td>{{ projeto.totalHorasLancadas }}</td>
+                            <td>
+                            {% for funcionario in projeto.funcionarios %}
+                                {{ funcionario }},
+                            {% endfor %}
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" href="/projeto/remove/{{ projeto.id }}">remover</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+{% endblock %}

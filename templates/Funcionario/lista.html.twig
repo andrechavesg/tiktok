@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Funcionarios
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Projeto</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for funcionario in funcionarios %}
+                        <tr>
+                            <td><a href="/funcionario/edita/{{ funcionario.id }}">{{ funcionario.nome }}</a></td>
+                            <td>
+                                {{ funcionario.dataDeNascimento|date("d-m-Y") }}
+                            </td>
+                            <td>{{ funcionario.projeto }}</td>
+                            <td>
+                                <a class="btn btn-danger" href="/funcionario/remove/{{ funcionario.id }}">remover</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+{% endblock %}

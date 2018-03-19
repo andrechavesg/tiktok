@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Hover Rows
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{ projeto.nome }}</td>
+                    </tr>
+                    <tr>
+                        <th>Horas Lancadas</th>
+                        <td>{{ projeto.horasLancadas }}</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+{% endblock %}

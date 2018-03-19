@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Hora Lançada
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Descrição</th>
+                        <td>{{ horaLancada.descricao }}</td>
+                    </tr>
+                    <tr>
+                        <th>Quantidade</th>
+                        <td>{{ horaLancada.quantidade }}</td>
+                    </tr>
+                    <tr>
+                        <th>Funcionario</th>
+                        <td>{{ horaLancada.funcionario }}</td>
+                    </tr>
+                    <tr>
+                        <th>Projeto</th>
+                        <td>{{ horaLancada.projeto }}</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+{% endblock %}

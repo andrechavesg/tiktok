@@ -29,7 +29,15 @@ class Funcionario
      */
     private $dataDeEntrada;
 
-    // getters e setters
+    /**
+     * @ORM\ManyToOne(targetEntity="Projeto", inversedBy="funcionarios")
+     */
+    private $projeto;
+
+    /**
+     * @ORM\OneToMany(targetEntity="HoraLancada", mappedBy="funcionario")
+     */
+    private $horasLancadas;
 
     /**
      * @return mixed
@@ -95,11 +103,48 @@ class Funcionario
         $this->dataDeEntrada = $dataDeEntrada;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getProjeto()
+    {
+        return $this->projeto;
+    }
+
+    /**
+     * @param mixed $projeto
+     */
+    public function setProjeto($projeto)
+    {
+        $this->projeto = $projeto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHorasLancadas()
+    {
+        return $this->horasLancadas;
+    }
+
+    /**
+     * @param mixed $horasLancadas
+     */
+    public function setHorasLancadas($horasLancadas)
+    {
+        $this->horasLancadas = $horasLancadas;
+    }
+
     public function getTempoNaEmpresa()
     {
         $hoje = new \DateTime();
         $diferenca = $hoje->diff($this->dataDeEntrada);
 
         return $diferenca;
+    }
+
+    public function __toString()
+    {
+        return $this->getNome();
     }
 }
