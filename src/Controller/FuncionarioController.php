@@ -51,7 +51,7 @@ class FuncionarioController extends Controller
         $em->persist($funcionario);
         $em->flush();
 
-        return $this->redirect("/funcionario/mostra/".$funcionario->getId());
+        return $this->redirect("/funcionario/lista");
     }
 
     /**
