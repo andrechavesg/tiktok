@@ -4,4 +4,9 @@
         Bem vindo!
         {{ 'now'|date('Y/m/d h:i') }}
     </h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="enviar" class="btn btn-success">
+    <img src="{{ imagem.caminho }}" alt="">
+    {{ form_end(form) }}
 {% endblock %}
